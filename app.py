@@ -1,39 +1,39 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-import pygame as pg
-import time
-from pathlib import Path
+# import pygame as pg
+# import time
+# from pathlib import Path
 
 app = Flask(__name__)
 # to create cookie need to cryptographically sign cookie - ensures user can't change content of cookie
 app.secret_key = "chase"
 
-GONG_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\gong.wav")
-BEEP_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\beep.wav")
-EXERCISES = ["Jumping Jacks", "Burpees", "Mountain Climbers", "Push ups", "Lunges", "Squats", "Plank", "Bicycle kicks", "Leg Thrusts", "High knees"]
-beep_track = ""
-gong_track = ""
+# GONG_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\gong.wav")
+# BEEP_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\beep.wav")
+# EXERCISES = ["Jumping Jacks", "Burpees", "Mountain Climbers", "Push ups", "Lunges", "Squats", "Plank", "Bicycle kicks", "Leg Thrusts", "High knees"]
+# beep_track = ""
+# gong_track = ""
 
-pg.mixer.init()
-pg.init()
-pg.mixer.set_num_channels(50)
+# pg.mixer.init()
+# pg.init()
+# pg.mixer.set_num_channels(50)
 
-def play(_path): 
-    track = pg.mixer.Sound(_path)
-    track.play()
+# def play(_path): 
+#     track = pg.mixer.Sound(_path)
+#     track.play()
 
 
-def beep(start):
-    # TODO add docstring, typing
-    play(BEEP_PATH)
-    print("3")
-    time.sleep(1)
-    play(BEEP_PATH)
-    print("2")
-    time.sleep(1)
-    play(BEEP_PATH)
-    print("1")
-    time.sleep(1)
-    play(GONG_PATH)
+# def beep(start):
+#     # TODO add docstring, typing
+#     play(BEEP_PATH)
+#     print("3")
+#     time.sleep(1)
+#     play(BEEP_PATH)
+#     print("2")
+#     time.sleep(1)
+#     play(BEEP_PATH)
+#     print("1")
+#     time.sleep(1)
+#     play(GONG_PATH)
 
 @app.route("/", methods=["GET", "POST"]) # endpoints, on where to point to page - define in Flask
 def home():
