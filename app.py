@@ -7,6 +7,10 @@ app = Flask(__name__)
 # to create cookie need to cryptographically sign cookie - ensures user can't change content of cookie
 app.secret_key = "chase"
 
+if __name__ == "__main__":
+    app.run(debug=True)
+    
+
 # GONG_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\gong.wav")
 # BEEP_PATH = Path(r"C:\Users\User\Desktop\workspaces\local\PYTHON\HIT_APP\sound_files\beep.wav")
 # EXERCISES = ["Jumping Jacks", "Burpees", "Mountain Climbers", "Push ups", "Lunges", "Squats", "Plank", "Bicycle kicks", "Leg Thrusts", "High knees"]
@@ -71,4 +75,4 @@ def exercise():
 @app.route("/complete")
 def completed():
     return render_template("complete.html", sets=session["set_counter"])
-    
+

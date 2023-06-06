@@ -1,0 +1,1 @@
+# Dockerize Flask APP and host in AWS ECS 
